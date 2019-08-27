@@ -1,0 +1,22 @@
+program Projeto1;
+
+uses
+  Vcl.Forms,
+  Login in 'Login.pas' {frmLogin},
+  Principal in 'Principal.pas' {frmPrincipal},
+  Sobre in 'Sobre.pas' {frmSobre},
+  frameBotoes in 'frameBotoes.pas' {Frame1: TFrame},
+  Cargo in 'Cargo.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.Title := 'Controle de Funcionários';
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmSobre, frmSobre);
+  Application.Run;
+end.

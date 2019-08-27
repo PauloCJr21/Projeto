@@ -1,0 +1,116 @@
+unit Funcionarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, frameBotoes,
+  Vcl.ComCtrls, Vcl.Mask, Vcl.Imaging.jpeg, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmFuncionarios = class(TForm)
+    Image1: TImage;
+    tImage: TImage;
+    lblNome: TLabel;
+    edtNome: TEdit;
+    edtCodigo: TEdit;
+    lblCodigo: TLabel;
+    edtCPF: TMaskEdit;
+    lblCPF: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    lblNascimento: TLabel;
+    lblEndereco: TLabel;
+    edtEndereco: TEdit;
+    edtTelefone: TMaskEdit;
+    lblTelefone: TLabel;
+    cbCargo: TComboBox;
+    lblCargo: TLabel;
+    lblSalario: TLabel;
+    edtSalario: TEdit;
+    TFrame11: TFrame1;
+    rdSexo: TRadioGroup;
+    Obs: TMemo;
+    DBGrid1: TDBGrid;
+    procedure Habilita();
+    procedure Desabilita();
+    procedure FormCreate(Sender: TObject);
+    procedure TFrame11btnNovoClick(Sender: TObject);
+    procedure TFrame11btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFuncionarios: TfrmFuncionarios;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmFuncionarios.Desabilita;
+begin
+  edtCodigo.Enabled:= FALSE;
+  edtNome.Enabled:= FALSE;
+  edtCPF.Enabled:= FALSE;
+  edtEndereco.Enabled:= FALSE;
+  edtSalario.Enabled:= FALSE;
+  edtTelefone.Enabled:=FALSE;
+  cbCargo.Enabled:=FALSE;
+  DateTimePicker1.Enabled:=FALSE;
+  rdSexo.Enabled:=FALSE;
+  Obs.Enabled:=FALSE;
+end;
+
+procedure TfrmFuncionarios.Habilita;
+begin
+  edtCodigo.Enabled:= TRUE;
+  edtNome.Enabled:= TRUE;
+  edtCPF.Enabled:= TRUE;
+  edtEndereco.Enabled:= TRUE;
+  edtSalario.Enabled:= TRUE;
+  edtTelefone.Enabled:=TRUE;
+  cbCargo.Enabled:=TRUE;
+  DateTimePicker1.Enabled:=TRUE;
+  rdSexo.Enabled:=TRUE;
+  Obs.Enabled:=TRUE;
+end;
+
+procedure TfrmFuncionarios.TFrame11btnNovoClick(Sender: TObject);
+begin
+  Habilita();
+end;
+
+procedure TfrmFuncionarios.TFrame11btnSalvarClick(Sender: TObject);
+begin
+   if(edtNome.Text='')then
+  begin
+    ShowMessage('O nome precisa ser preenchido');
+    edtNome.SetFocus;
+  end
+  else
+  begin
+    ShowMessage('Dados salvos');
+    edtCodigo.Enabled:= FALSE;
+    edtNome.Enabled:= FALSE;
+    edtCodigo.Clear;
+    edtNome.Clear;
+    TFrame11.btnNovo.Enabled:=TRUE;
+    TFrame11.btnSalvar.Enabled:=FALSE;
+    Tframe11.btnEditar.Enabled:=FALSE;
+    TFrame11.btnExcluir.Enabled:=FALSE;;
+  end;
+end;
+
+procedure TfrmFuncionarios.FormCreate(Sender: TObject);
+begin
+  TFrame11.btnNovo.Enabled:=TRUE;
+  TFrame11.btnSalvar.Enabled:=FALSE;
+  TFrame11.btnEditar.Enabled:=FALSE;
+  TFrame11.btnExcluir.Enabled:=FALSE;
+  Desabilita();
+end;
+
+
+end.

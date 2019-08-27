@@ -1,0 +1,88 @@
+unit Projeto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, frameBotoes, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+
+type
+  TfrmProjeto = class(TForm)
+    PageControl1: TPageControl;
+    abaPrj: TTabSheet;
+    abaFun: TTabSheet;
+    frmBotoesPrj: TFrame1;
+    edtCodigo: TEdit;
+    edtTitulo: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    cmbReponsavel: TComboBox;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    cmbProjeto: TComboBox;
+    cmbFuncionario: TComboBox;
+    codProjeto: TEdit;
+    frmBotoesFun: TFrame1;
+    codFuncionario: TEdit;
+    Image1: TImage;
+    lblFuncionario: TLabel;
+    lblProjeto: TLabel;
+    Label3: TLabel;
+    Image2: TImage;
+    lblTitulo: TLabel;
+    lblDataInicio: TLabel;
+    lblDataFinal: TLabel;
+    lblCodigo: TLabel;
+    cbConcluido: TCheckBox;
+    lblResponsavel: TLabel;
+    MemoDescricao: TMemo;
+    lblDescricao: TLabel;
+    procedure habilitaFun();
+    procedure desabilitaFun();
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmProjeto: TfrmProjeto;
+
+implementation
+
+{$R *.dfm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{ TfrmProjeto }
+
+procedure TfrmProjeto.habilitaFun;
+begin
+  edtCodigo.Enabled:= TRUE;
+  edtTitulo.Enabled:= TRUE;
+  MemoDescricao.Enabled:= TRUE;
+  DateTimePicker1.Enabled:= TRUE;
+  DateTimePicker2.Enabled:= TRUE;
+  cmbReponsavel.Enabled:= TRUE;
+end;
+
+procedure TfrmProjeto.desabilitaFun;
+begin
+  edtCodigo.Enabled:= FALSE;
+  edtTitulo.Enabled:= FALSE;
+end;
+
+end.

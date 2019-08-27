@@ -1,0 +1,47 @@
+unit Projeto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, frameBotoes;
+
+type
+  TForm1 = class(TForm)
+    PageControl1: TPageControl;
+    abaPrj: TTabSheet;
+    abaFun: TTabSheet;
+    frmBotoesPrj: TFrame1;
+    edtCodigo: TEdit;
+    lblCodigo: TLabel;
+    edtTitulo: TEdit;
+    lblTitulo: TLabel;
+    lblDescricao: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    lblDataInicio: TLabel;
+    lblDataFinal: TLabel;
+    lblResponsavel: TLabel;
+    cbReponsavel: TComboBox;
+    cbConcluido: TCheckBox;
+    DBGrid1: TDBGrid;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label3: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

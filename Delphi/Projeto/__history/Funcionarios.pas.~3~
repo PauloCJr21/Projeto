@@ -1,0 +1,47 @@
+unit Funcionarios;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, frameBotoes,
+  Vcl.ComCtrls, Vcl.Mask, Vcl.Imaging.jpeg, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmFuncionarios = class(TForm)
+    Image1: TImage;
+    tImage: TImage;
+    lblNome: TLabel;
+    edtNome: TEdit;
+    edtCodigo: TEdit;
+    lblCodigo: TLabel;
+    edtCPF: TMaskEdit;
+    lblCPF: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    lblNascimento: TLabel;
+    lblEndereco: TLabel;
+    edtEndereco: TEdit;
+    MaskEdit2: TMaskEdit;
+    lblTelefone: TLabel;
+    cbCargo: TComboBox;
+    lblCargo: TLabel;
+    lblSalario: TLabel;
+    edtSalario: TEdit;
+    TFrame11: TFrame1;
+    rdSexo: TRadioGroup;
+    Obs: TMemo;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFuncionarios: TfrmFuncionarios;
+
+implementation
+
+{$R *.dfm}
+
+end.

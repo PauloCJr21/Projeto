@@ -1,0 +1,48 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Cargo1: TMenuItem;
+    Cargo2: TMenuItem;
+    Funcionrio1: TMenuItem;
+    Relatrios1: TMenuItem;
+    Sair1: TMenuItem;
+    Sobre1: TMenuItem;
+    Image1: TImage;
+    procedure Sair1Click(Sender: TObject);
+    procedure Sobre1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Sobre;
+
+procedure TfrmPrincipal.Sair1Click(Sender: TObject);
+begin
+  frmPrincipal.Close;
+end;
+
+procedure TfrmPrincipal.Sobre1Click(Sender: TObject);
+begin
+    frmSobre:= TfrmSobre.Create(self);
+    frmSobre.ShowModal;
+end;
+
+end.
